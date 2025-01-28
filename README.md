@@ -17,8 +17,8 @@ A highly customizable advanced React tooltip component, offering extensive styli
 
 # Demo
 
-![image](./assets/one.png)
-![image](./assets/all.png)
+![image](https://github.com/siamahnaf/siamf-tooltip/blob/main/assets/one.png)
+![image](https://github.com/siamahnaf/siamf-tooltip/blob/main/assets/all.png)
 
 # Installation
 
