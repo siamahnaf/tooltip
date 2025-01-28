@@ -1,6 +1,6 @@
 {
   "name": "@siamf/tooltip",
-  "version": "1.5.2",
+  "version": "1.5.5",
   "description": "A highly customizable advanced React tooltip component, offering extensive styling options to fit any design needs. It supports dynamic positioning, and custom triggers for enhanced interactivity.",
   "homepage": "https://github.com/siamahnaf/siamf-tooltip",
   "main": "dist/cjs/index.js",
