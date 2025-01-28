@@ -136,7 +136,7 @@ $ npm i @siamf/tooltip
     <td> radius </td>
     <td> Arrow icon corner radius </td>
     <td> number(0-15) </td>
-    <td> 0 </td>
+    <td> 3 </td>
   </tr>
    <tr>
     <td> fill </td>
