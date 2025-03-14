@@ -3,7 +3,6 @@ import { useState, useEffect, useRef, cloneElement, CSSProperties } from "react"
 import { computePosition, offset as floatOffset, shift, arrow as floatArrow, flip } from '@floating-ui/react-dom';
 import { createPortal } from "react-dom";
 
-
 //Components
 import Arrow from "./Arrow";
 
@@ -100,12 +99,12 @@ const Tooltip = (props: TooltipProps) => {
         <div>
             {trigger === "hover" ? cloneElement(children, {
                 ref: referenceRef,
-                onMouseEnter: () => setShow(!show),
-                onMouseLeave: () => setShow(!show)
+                onMouseEnter: () => setShow(true),
+                onMouseLeave: () => setShow(false)
             }) : cloneElement(children, {
                 ref: referenceRef,
-                onFocus: () => setShow(!show),
-                onBlur: () => setShow(!show)
+                onFocus: () => setShow(true),
+                onBlur: () => setShow(false)
             })}
             {show &&
                 createPortal(

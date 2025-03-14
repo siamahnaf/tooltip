@@ -89,12 +89,12 @@ const Tooltip = (props) => {
     }, [show]);
     return ((0, jsx_runtime_1.jsxs)("div", { children: [trigger === "hover" ? (0, react_1.cloneElement)(children, {
                 ref: referenceRef,
-                onMouseEnter: () => setShow(!show),
-                onMouseLeave: () => setShow(!show)
+                onMouseEnter: () => setShow(true),
+                onMouseLeave: () => setShow(false)
             }) : (0, react_1.cloneElement)(children, {
                 ref: referenceRef,
-                onFocus: () => setShow(!show),
-                onBlur: () => setShow(!show)
+                onFocus: () => setShow(true),
+                onBlur: () => setShow(false)
             }), show &&
                 (0, react_dom_2.createPortal)((0, jsx_runtime_1.jsxs)("div", { ref: tooltipRef, style: Object.assign(Object.assign({}, containerStyle), { position: "absolute", left: `${tooltipPosition.x}px`, top: `${tooltipPosition.y}px` }), className: className, children: [showArrow &&
                             (0, jsx_runtime_1.jsx)(Arrow_1.default, { ref: arrowRef, styles: arrowCss, arrowProps: arrowConfig, variant: variant }), content] }), document.body)] }));

@@ -84,12 +84,12 @@ const Tooltip = (props) => {
     }, [show]);
     return (_jsxs("div", { children: [trigger === "hover" ? cloneElement(children, {
                 ref: referenceRef,
-                onMouseEnter: () => setShow(!show),
-                onMouseLeave: () => setShow(!show)
+                onMouseEnter: () => setShow(true),
+                onMouseLeave: () => setShow(false)
             }) : cloneElement(children, {
                 ref: referenceRef,
-                onFocus: () => setShow(!show),
-                onBlur: () => setShow(!show)
+                onFocus: () => setShow(true),
+                onBlur: () => setShow(false)
             }), show &&
                 createPortal(_jsxs("div", { ref: tooltipRef, style: Object.assign(Object.assign({}, containerStyle), { position: "absolute", left: `${tooltipPosition.x}px`, top: `${tooltipPosition.y}px` }), className: className, children: [showArrow &&
                             _jsx(Arrow, { ref: arrowRef, styles: arrowCss, arrowProps: arrowConfig, variant: variant }), content] }), document.body)] }));
