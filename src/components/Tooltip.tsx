@@ -32,6 +32,7 @@ const Tooltip = (props: TooltipProps) => {
         showArrow = true,
         arrowConfig,
         className = "",
+        containerClassName = "",
         styles
     } = props;
 
@@ -96,11 +97,19 @@ const Tooltip = (props: TooltipProps) => {
     }, [show]);
 
     return (
-        <div>
+        <div className={containerClassName}>
             {trigger === "hover" ? cloneElement(children, {
                 ref: referenceRef,
-                onMouseEnter: () => setShow(true),
-                onMouseLeave: () => setShow(false)
+                onMouseEnter: () => {
+                    if (window.matchMedia("(hover: hover)").matches) {
+                        setShow(true);
+                    }
+                },
+                onMouseLeave: () => {
+                    if (window.matchMedia("(hover: hover)").matches) {
+                        setShow(false);
+                    }
+                }
             }) : cloneElement(children, {
                 ref: referenceRef,
                 onFocus: () => setShow(true),

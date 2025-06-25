@@ -11,6 +11,7 @@ export type TooltipProps = {
     variant?: "success" | "warning" | "error" | "info"
     showArrow?: boolean;
     arrowConfig?: ArrowTypes;
+    containerClassName?: string;
     className?: string;
     styles?: Omit<CSSProperties, "position" | "left" | "top">;
 }

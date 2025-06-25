@@ -29,7 +29,7 @@ const Tooltip = (props) => {
         ["warning", variant_1.warningCss],
     ]);
     //props 
-    const { children, content, placement = "top", trigger = "hover", openDefault = false, offset = 10, variant = "info", showArrow = true, arrowConfig, className = "", styles } = props;
+    const { children, content, placement = "top", trigger = "hover", openDefault = false, offset = 10, variant = "info", showArrow = true, arrowConfig, className = "", containerClassName = "", styles } = props;
     //Styles
     const containerStyle = Object.assign({}, containerMap.get(variant), styles);
     //State
@@ -87,10 +87,18 @@ const Tooltip = (props) => {
         });
         updatePosition();
     }, [show]);
-    return ((0, jsx_runtime_1.jsxs)("div", { children: [trigger === "hover" ? (0, react_1.cloneElement)(children, {
+    return ((0, jsx_runtime_1.jsxs)("div", { className: containerClassName, children: [trigger === "hover" ? (0, react_1.cloneElement)(children, {
                 ref: referenceRef,
-                onMouseEnter: () => setShow(true),
-                onMouseLeave: () => setShow(false)
+                onMouseEnter: () => {
+                    if (window.matchMedia("(hover: hover)").matches) {
+                        setShow(true);
+                    }
+                },
+                onMouseLeave: () => {
+                    if (window.matchMedia("(hover: hover)").matches) {
+                        setShow(false);
+                    }
+                }
             }) : (0, react_1.cloneElement)(children, {
                 ref: referenceRef,
                 onFocus: () => setShow(true),
